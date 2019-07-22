@@ -1,10 +1,14 @@
 /*
     The problem we have is that there are two function which are each updating the same global variable.
     What can we do about this wthout creating a new variable to keep track of each time a function is created with the same type of output?
+
+    CLOSURES are functions with access to their own private variables. 
+    You can create as many closures with matchin variable names as you want.
+
 */
 
 
-var count = 0;
+let birds = 3;
 
 function countBirds() {
   count += 1;
@@ -12,7 +16,9 @@ function countBirds() {
 }
 
 function countDogs() {
-    count += 1;
-    return count + ' dogs';
+    let dogs = 8;
+    console.log(dogs);  //8
+    console.log(birds); //3
 }
-
+console.log(dogs);  //undefined
+console.log(birds); //3
