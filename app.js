@@ -5,20 +5,20 @@
     CLOSURES are functions with access to their own private variables. 
     You can create as many closures with matchin variable names as you want.
 
+    All variables declared within the outer function are visible to the inner function even though both are hidden from the global scope.
+
+    The problem now is that every time we call countBirds or countDogs then we're resetting the conut variable to 0.
 */
 
 
-let birds = 3;
-
 function countBirds() {
-  count += 1;
-  return count + ' birds';
+    let count = 0;
+    count++;
+    return `${count} birds`
 }
 
 function countDogs() {
-    let dogs = 8;
-    console.log(dogs);  //8
-    console.log(birds); //3
+    let count = 0;
+    count++;
+    return `${count} dogs`
 }
-console.log(dogs);  //undefined
-console.log(birds); //3
