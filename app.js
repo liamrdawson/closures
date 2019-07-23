@@ -11,10 +11,12 @@
 */
 
 
-function countBirds() {
+function makeBirdCounter() {
     let count = 0;
-    count++;
-    return `${count} birds`
+    return function() {
+        count++;
+        return `${count} birds`
+    }
 }
 
 function countDogs() {
