@@ -10,7 +10,6 @@
     The problem now is that every time we call countBirds or countDogs then we're resetting the conut variable to 0.
 */
 
-
 function makeBirdCounter() {
     let count = 0;
     return function() {
@@ -19,8 +18,10 @@ function makeBirdCounter() {
     }
 }
 
-function countDogs() {
+function makeDogCounter() {
     let count = 0;
-    count++;
-    return `${count} dogs`
+    return () => {
+        count++;
+        return `${count} dogs`
+    }
 }
